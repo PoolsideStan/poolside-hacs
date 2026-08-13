@@ -29,7 +29,7 @@ your network via zeroconf and talks to it over an encrypted websocket session
 ### HACS (recommended)
 
 1. In HACS, choose **Custom repositories** from the overflow menu, add
-   `https://github.com/PoolsideStan/poolside-hacs` with type **Integration**.
+   `https://github.com/PoolsideStan/poolside-official-integration` with type **Integration**.
 2. Search for **Poolside** in HACS and download it.
 3. Restart Home Assistant.
 
@@ -69,7 +69,7 @@ overrides the core one).
 ## Issues
 
 Please report problems at
-[github.com/PoolsideStan/poolside-hacs/issues](https://github.com/PoolsideStan/poolside-hacs/issues).
+[github.com/PoolsideStan/poolside-official-integration/issues](https://github.com/PoolsideStan/poolside-official-integration/issues).
 
 ## License
 
