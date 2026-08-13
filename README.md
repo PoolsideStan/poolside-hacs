@@ -18,6 +18,12 @@ your network via zeroconf and talks to it over an encrypted websocket session
 - **sensor** — water temperature, body-of-water state, site mode, and optional
   read-only pool device telemetry
 
+## Requirements
+
+- Poolside Tech Attendant software **2.7.0 or later**
+- Administrator access to the controller (to approve the pairing request)
+- The controller must be reachable on your local network
+
 ## Installation
 
 ### HACS (recommended)
