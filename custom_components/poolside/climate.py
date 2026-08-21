@@ -96,7 +96,7 @@ class PoolsideThermostat(PoolsideEntity, ClimateEntity):
             return _HVAC_MODE_BY_CONTROL_MODE[
                 ControlMode(self._desired(CONTROL_MODE_FIELD))
             ]
-        except ValueError, KeyError:
+        except (ValueError, KeyError):
             return HVACMode.HEAT
 
     @property

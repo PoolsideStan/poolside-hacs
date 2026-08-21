@@ -153,7 +153,7 @@ def _float_value(value: Any) -> float | None:
     """Coerce a telemetry value to a number, or None if it isn't one."""
     try:
         return float(value)
-    except TypeError, ValueError:
+    except (TypeError, ValueError):
         return None
 
 

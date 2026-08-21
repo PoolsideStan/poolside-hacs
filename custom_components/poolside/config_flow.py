@@ -219,7 +219,7 @@ class PoolsideConfigFlow(ConfigFlow, domain=DOMAIN):
                 PairingInvalid,
             ) as err:
                 return self.async_abort(reason=_ABORT_REASONS[type(err)])
-            except TimeoutError, aiohttp.ClientError, PairingError:
+            except (TimeoutError, aiohttp.ClientError, PairingError):
                 return self.async_show_form(
                     step_id="user",
                     data_schema=STEP_USER_DATA_SCHEMA,
@@ -308,7 +308,7 @@ class PoolsideConfigFlow(ConfigFlow, domain=DOMAIN):
             with contextlib.suppress(PoolsideConnectionError, PoolsideCommandError):
                 site, _controls = await client.async_get_control_layout()
                 site_name = site.name
-        except PoolsideAuthError, PoolsideConnectionError:
+        except (PoolsideAuthError, PoolsideConnectionError):
             return self.async_show_form(
                 step_id="user",
                 data_schema=STEP_USER_DATA_SCHEMA,

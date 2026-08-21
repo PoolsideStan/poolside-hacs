@@ -10,6 +10,21 @@ permissions:
   contents: read
 
 jobs:
+  # hassfest and the HACS action both validate metadata, not code: a module
+  # with a syntax error passes them and is only caught when Home Assistant
+  # tries to import it. That is how py2-style `except A, B:` shipped in 0.1.0
+  # and left the integration unloadable, so compilation is gated first.
+  compile:
+    name: Byte-compile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Byte-compile every module
+        run: python -m compileall -q custom_components
+
   hassfest:
     runs-on: ubuntu-latest
     steps:
